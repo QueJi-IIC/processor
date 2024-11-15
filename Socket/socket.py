@@ -46,8 +46,15 @@ def yolo_task():
             # Optionally, emit an error status to the server
             sio.emit('detection_status', {'detected': 'error'})
 
-# Connecting Socket.IO server
-sio.connect('http://localhost:5500')  # Replace with your server address
+# Define headers
+headers = {
+    'client-id': 'a9f1c553-b377-4801-9e15-326d62f378ce',
+    'client-secret': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiJhOWYxYzU1My1iMzc3LTQ4MDEtOWUxNS0zMjZkNjJmMzc4Y2UiLCJpYXQiOjE3MzE2OTk5MTUsImV4cCI6MTczNDMyNzkxNX0.hs2_DNQ7YobwTUg5Qktn6_D2s8eio-ZAEsWMA0lYlsY',
+    'platform': 'hardware',
+}
+
+# Connecting Socket.IO server with headers
+sio.connect('http://localhost:5500', headers=headers)  # Replace with your server address
 
 # Start the YOLO background task
 sio.start_background_task(yolo_task)

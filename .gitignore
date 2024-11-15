@@ -3,3 +3,4 @@
 __pycache__
 try.py
 yolov9c.pt
+yolov9c_openvino_model
