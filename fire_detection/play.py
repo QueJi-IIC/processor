@@ -1,9 +1,9 @@
 import cv2
 from ultralytics import YOLO
-model = YOLO("../Weapon_Detection/best.pt")
-classesNames = ["person", "weapon"]
+model = YOLO("../fire_detection/best.pt")
+classesNames = ["fire"]
 # Load the image
-image_path = "try.jpg"
+image_path = "fire.jpg"
 image = cv2.imread(image_path)
 image = cv2.resize(image, (640, 480))  # Resize the image to 640x480
 
@@ -15,7 +15,7 @@ if image is None:
 results = model(image)
 
 # Ensure the correct class index for weapons
-weapon_class_index = classesNames.index("weapon")
+weapon_class_index = classesNames.index("fire")
 
 for r in results:
     for box in r.boxes:

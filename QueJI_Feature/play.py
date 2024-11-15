@@ -59,21 +59,20 @@ def boolx():
     while True:
         z = integrate()
         if z is False or z <= 2:
-            return False
+            return {"Status": False, "People" : i}
         else:
-            return True
+            return {"Status": True, "People" : i}
+
 
 def runner():
-    cvo.start_Cam()
+    # cvo.start_Cam()
 
-    while True:
-        e = boolx()
-        print(e)
-        print("Number of person: ", i)
-        cvo.cv2.imshow('Webcam', img)
-        if cvo.cv2.waitKey(1) == ord(':'):
-            break
+    boolx()
+    cvo.cv2.imshow('Webcam', img)
+    # print(e)
+    if cvo.cv2.waitKey(1) == ord(':'):
+        return
 
-    return
-
-runner()
+        # cvo.cap.release()
+    # cvo.cv2.destroyAllWindows()
+    return boolx()
