@@ -15,7 +15,7 @@ def Camera(shop_type):
     while True:
         global img
         success, img = cvo.cap.read()
-        results = main.ov_model(img, stream=True)
+        results = main.ov_model.predict(img, show=False, classes=[0], conf=0.005, save=False)
 
         for r in results:
             boxes = r.boxes
@@ -39,7 +39,7 @@ def Camera(shop_type):
                     thickness = 2
 
                     cvo.cv2.putText(img, classes.classNames[cls], org, font, fontScale, color, thickness)
-                    return i
+            return i
 
         return False
 
@@ -68,11 +68,17 @@ def runner():
     # cvo.start_Cam()
 
     boolx()
+    print(i)
+    print(boolx())
     cvo.cv2.imshow('Webcam', img)
-    # print(e)
+
     if cvo.cv2.waitKey(1) == ord(':'):
         return
 
         # cvo.cap.release()
     # cvo.cv2.destroyAllWindows()
     return boolx()
+
+cvo.start_Cam()
+while True:
+    runner()
