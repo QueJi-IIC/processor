@@ -5,13 +5,11 @@ import QueJI_Feature.cvo as cvo
 shop_chosen = 'Person'
 shop_capacity = 15
 
-
 def set_object_index(shop_type):
     if shop_type == 'Person':
         return 0
     elif shop_type == 'Car':
         return 2
-
 
 def Camera(shop_type):
     while True:
@@ -46,7 +44,7 @@ def Camera(shop_type):
         return False
 
 def availability(object, capacity):
-    availabilty = capacity - (object + 10 )
+    availabilty = capacity - (object + 10)
     return availabilty
 
 def integrate():
@@ -65,26 +63,6 @@ def boolx():
         else:
             return True
 
-# def runner():
-#     cvo.start_Cam()
-#     while True:
-#         print(boolx())
-#         # boolx()
-#         cvo.cv2.imshow('Webcam', img)
-#         # print(e)
-#         if cvo.cv2.waitKey(1) == ord(':'):
-#             return
-#
-#             # cvo.cap.release()
-#         # cvo.cv2.destroyAllWindows()
-#         return boolx()
-#
-# # runner()
-# # cvo.cap.release()
-# # cvo.cv2.destroyAllWindows()
-#
-# runner()
-
 def runner():
     cvo.start_Cam()
 
@@ -96,9 +74,6 @@ def runner():
         if cvo.cv2.waitKey(1) == ord(':'):
             break
 
-            # cvo.cap.release()
-    # cvo.cv2.destroyAllWindows()
     return
 
-# cvo.cap.release()
-# cvo.cv2.destroyAllWindows()
+runner()
