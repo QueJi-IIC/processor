@@ -1,2 +1,3 @@
 kernel.errors.txt
 ./best_openvino_model
+./__pycache__

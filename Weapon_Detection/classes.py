@@ -1,0 +1,1 @@
+classesNames = ["person", "weapon"]
